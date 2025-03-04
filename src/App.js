@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import ItemList from './components/ItemList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const items = [
+        { id: 1, name: 'Leche', purchased: false },
+        { id: 2, name: 'Pan', purchased: false },
+        // Otros artículos...
+    ];
+
+    const handleToggle = (id) => {
+        // Lógica para marcar/desmarcar artículo
+    };
+
+    const handleDelete = (id) => {
+        // Lógica para eliminar artículo
+    };
+
+    return (
+        <div className="container mt-5">
+            <h1 className="text-center">Lista de Compras</h1>
+            <ItemList items={items} onToggle={handleToggle} onDelete={handleDelete} />
+        </div>
+    );
+};
 
 export default App;
